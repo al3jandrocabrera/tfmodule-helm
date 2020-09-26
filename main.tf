@@ -15,19 +15,19 @@ resource "helm_release" "this" {
     data.template_file.values.rendered
   ]
 
-  dynamic set_helm_value {
+  dynamic set {
     for_each = var.set_helm_values
     content {
-      name = set_helm_value.key
-      value = set_helm_value.value
+      name = set.key
+      value = set.value
     }
   }
 
-  dynamic set_sensitive_value {
+  dynamic set_sensitive {
     for_each = var.set_sensitive_values
     content {
-      name = set_sensitive_value.key
-      value = set_sensitive_value.value
+      name = set_sensitive.key
+      value = set_sensitive.value
     }
   }
 }

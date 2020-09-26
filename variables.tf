@@ -15,3 +15,4 @@ variable "chart_values" {
 variable "create_namespace" {
   default = false
 }
+variable "values_path" {}
