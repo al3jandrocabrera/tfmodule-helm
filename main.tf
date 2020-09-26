@@ -4,11 +4,12 @@ data "template_file" "values" {
 }
 
 resource "helm_release" "this" {
-  name       = var.release_name
-  repository = var.repo_url 
-  chart      = var.chart_name
-  version    = var.chart_version
-  namespace  = var.namespace
+  name             = var.release_name
+  repository       = var.repo_url 
+  chart            = var.chart_name
+  version          = var.chart_version
+  namespace        = var.namespace
+  create_namespace = var.create_namespace
 
   values = [
     data.template_file.values.rendered

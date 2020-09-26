@@ -12,3 +12,6 @@ variable "set_sensitive_values" {
 variable "chart_values" {
   default = {}
 }
+variable "create_namespace" {
+  default = false
+}
